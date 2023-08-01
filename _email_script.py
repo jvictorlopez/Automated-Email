@@ -39,7 +39,7 @@ with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         em.set_content(body)
 
         # Attach certificate
-        cert_file = f'certificates/Certificate T123 (1)-{list(recipients.keys()).index(name) + 1}.pdf'
+        cert_file = f'certificates/Certificate T123 -{list(recipients.keys()).index(name) + 1}.pdf'
         with open(cert_file, 'rb') as f:
             file_data = f.read()
             file_name = f.name
